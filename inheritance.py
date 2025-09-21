@@ -1,3 +1,9 @@
+
+# INHERITANCE: A class that inherits from another class is called a subclass.
+# -> helps to increase code reusability and extensibility
+# A class that is inherited from is called a superclass.
+
+'''
 class Account:
     account_counter = 1000  # for unique account numbers
 
@@ -122,3 +128,41 @@ while True:
         break
     else:
         print("Invalid choice! Please try again.")
+'''
+
+# multi-level inheritance
+
+class Factory:
+    def __init__(self,material,zips):
+        self.material = material
+        self.zips = zips
+    def show(self):
+        print(f"Material: {self.material}")
+        print(f"Zips: {self.zips}")
+
+
+class Car(Factory):
+    def __init__(self,material,zips,engine):
+        super().__init__(material,zips)
+        self.engine = engine
+
+    def show(self):
+        print(f"Material: {self.material}")
+        print(f"Zips: {self.zips}")
+        print(f"Engine: {self.engine}")
+
+
+class Bike(Car):
+    def __init__(self,material,zips,engine,wheels):
+        super().__init__(material,engine,zips)
+        self.wheels = wheels
+
+    def show(self):
+        print(f"Material: {self.material}")
+        print(f"Zips: {self.zips}")
+        print(f"Engine: {self.engine}")
+        print(f"Wheels: {self.wheels}")
+
+
+obj=Bike("Metal","Zips","Engine","Wheels")
+obj.show()
