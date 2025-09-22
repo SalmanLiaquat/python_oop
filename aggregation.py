@@ -21,9 +21,9 @@ class Professor:
 class University:
     def __init__(self,name):
         self.name = name
-        self.professors = []
+        self.professors = [] # aggregation
 
-    def add_professor(self,professor):
+    def add_professor(self,professor): # aggregation method
         self.professors.append(professor)
 
     def remove_professor(self,professor):
