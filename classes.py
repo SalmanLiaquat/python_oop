@@ -37,7 +37,7 @@ print(f"Manufacturing Year: {obj1.manufacture_year}")
 #class methods-> work with class itself, not target the instance of class(object),
 # we  use @classmethod decorator to create a class method it take cls as the first parameter
 class Animal:
-    def __init__(self,name):
+    def __init__(self,name): # dunder method
         self.name = name
 
     @classmethod
