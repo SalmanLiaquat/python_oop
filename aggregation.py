@@ -25,7 +25,9 @@ class University:
 
     def add_professor(self,professor): # aggregation method
         self.professors.append(professor)
-
+    def list_professors(self):
+       
+            return [prof.name for prof in self.professors] 
     def remove_professor(self,professor):
         self.professors.remove(professor)
 
@@ -41,6 +43,6 @@ university.add_professor(Prof3)
 print(university.name)
 print(f"---{university.name} has {len(university.professors)} professors:---")
 count =0
-for i in university.professors:
+for i in university.list_professors():
     count+=1
-    print(f"{count}: {i.name}") #print(i.name)
+    print(f"{count}: {i}") #print(i.name)
