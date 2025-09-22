@@ -17,18 +17,17 @@ class Room:
 class House:
     def __init__(self, name):
         self.name = name
-        self.rooms = []
+        self.rooms = [Room("bedroom"), Room("bathroom"), Room("kitchen")]
 
-    def add_room(self, room):
-        self.rooms.append(room)
+    
 
     def list_rooms(self):
          return [ f"{self.name} has a {room.room_type} rooms." for room in self.rooms] 
 
 
-rooms =Room(["Kitchen", "Bedroom", "Bathroom"])
+
 house =House("Salman House")
-house.add_room(rooms)
+
 
 for i in house.list_rooms():
     print(i)
