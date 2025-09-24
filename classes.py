@@ -36,6 +36,13 @@ print(f"Manufacturing Year: {obj1.manufacture_year}")
 
 #class methods-> work with class itself, not target the instance of class(object),
 # we  use @classmethod decorator to create a class method it take cls as the first parameter
+'''
+A class method works with the class itself, not with instances.
+
+It takes cls (class) as the first parameter, instead of self.
+
+Defined with the @classmethod decorator.
+'''
 class Animal:
     def __init__(self,name): # dunder method
         self.name = name
@@ -60,4 +67,10 @@ animal1.make_sound()
 
 #static methods->not target the class and its instance of class(object), 
 # use @staticmethod decorator to create a static method it just a normal regular function
+'''
+A static method in Python is a method that belongs to a class, not to an instance.
 
+It does not take self or cls as the first parameter.
+
+It behaves like a normal function, but it is logically related to the class.
+'''

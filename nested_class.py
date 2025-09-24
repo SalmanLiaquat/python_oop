@@ -9,21 +9,32 @@
 
 
 class Company:
-    def __init__(self,name):
+    def __init__(self, name):
         self.name = name
+        self.employees = []   # Company will manage employees list
+
+    def add_employee(self, name, age):
+        emp = self.Employee(name, age)
+        self.employees.append(emp)
+
+    def employees_list(self):
+        return [emp.name for emp in self.employees]
+
+    # Nested Employee Class
     class Employee:
-       def __init__(self,name,age):
-           self.name = name
-           self.age = age
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
 
-    
-company=Company("Google")
-emp1=company.Employee("Ahmed",24)
-print(company.name)
-print(f"Name: {emp1.name} Age: {emp1.age}") #print(emp1.name)
+# ------------------- USAGE -------------------
+company = Company("Google")
 
-
-
+company.add_employee("Ahmed", 24)
+company.add_employee("Salman", 24)
+company.add_employee("Liaquat", 24)
+print(f"------{company.name}---------")
+for emp in company.employees_list():
+    print(emp)
 
 
 
